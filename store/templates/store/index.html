@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Girls blog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
+            integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+          integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    {#    <link rel="stylesheet" href="{% static 'css/style.css' %}">#}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+<header class="">
+    <div class="">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <div class="row">
+        <div class="row">
+            {% for post in posts %}
+
+                <div class="col-md-4 coupon post_body ">
+                    <a class="lgo s-link " href="/store/{{ post.post_store.slug }}/" target="_self"
+                       data-ga-act="ClickOnBrandIcon">
+                        <img decoding="async" class="c-store-logo" src="{{ post.post_store.store_logo.url }}"
+                             data-sizes="92px" alt="نون" width="92" height="46" loading="eager">
+                    </a>
+                    <div class="">
+                        <h2 style="" class="c-heading">{{ post.offer }}</h2>
+
+                    </div>
+                    <div class="c-info noselect num-items-3 has-desc">
+
+                        <div class="c-used">
+                            <div class="c-info-i">
+                                <div><img decoding="async" loading="lazy"
+                                          src="https://cdn.almowafir.com/1/alw_ic_last_used.png" height="17" width="17"
+                                          alt="Last Used"></div>
+                                <div class="c-used-txt m-lg-0">{{ post.valid_until }}</div>
+                            </div>
+                        </div>
+
+                        <div class="c-verified">
+                            <div class="c-info-i">
+                                <div><img decoding="async" loading="lazy"
+                                          src="https://cdn.almowafir.com/1/alw_ic_verified.png" height="17" width="17"
+                                          alt="Verified"></div>
+                                <div>{{ post.extra_text }}</div>
+                            </div>
+                        </div>
+                        {#                         <div class="c-show-details">#}
+                        {#                            <div>#}
+                        {#                                <span class="c-show-txt">عرض التفاصيل</span>#}
+                        {#                                <span class="c-hide-txt">إخفاء التفاصيل</span>#}
+                        {#                            </div>#}
+                        {#                            <div><span class="c-show-details-btn">›</span></div>#}
+                        {#                        </div>#}
+
+                    </div>
+                </div>
+                {#                <div class="card " style="width: 18rem;">#}
+                {##}
+                {##}
+                {#                    <div class="card-body">#}
+                {##}
+                {#                        <h5 class="card-title">{{ post.post_txt }}</h5>#}
+                {#                        <h2 class="card-text " style="font-size: 1.25em">{{ post.offer }}</h2>#}
+                {#                        <a href="#" class="btn btn-primary">Go somewhere</a>#}
+                {#                    </div>#}
+                {#                </div>#}
+
+
+            {% endfor %}
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(".toggle").on("click", function () {
+                if ($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                } else {
+                    $(".item").addClass("active");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<nav class="my_nav">
+    <ul class="menu">
+        <li class="logo"><a href="#">
+            <input value="" placeholder="ابحث عن منتج"
+            >
+            <img class="log_img" src="{% static 'img/ff1.png' %}" alt="" style="float: right;border-radius: 12px">
+            {#                FollowAndrew.dev#}
+        </a>
+        </li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#">Services</a></li>
+        <li class="item button"><a href="#">Log In</a></li>
+        <li class="item button secondary"><a href="#">Sign Up</a></li>
+        <li class="toggle"><span class="bars"></span></li>
+    </ul>
+</nav>
+<main>
+    <div class="" style="background-color: whitesmoke">
+        <div class="wrapper container">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">متاجر</a></li>
+                <li><a href="#">عروض</a></li>
+                <li><a href="#">نصائح</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="page-title" style="text-align: center">جميع كوبونات وعروض متاجر جمهورية
+        </h1>
+        <div class="page-header">
+            <div class="arabic" style="padding: 25px">
+                <h3 dir="rtl" class="arabic">مواقع تسوق اون لاين، اكواد خصم وكوبونات تخفيض 2023</h3>
+
+                <p dir="rtl" class="">نقدم لك كوبونات واكواد خصم مواقع تسوق اون لاين عديدة ومختلفة أصبحت الآن بإمكانها
+                    توفير
+                    لك أي
+                    خدمة أو سلعة بسهولة وسرعة أكبر في الوطن العربي وخاصة في جمهورية مصر. الشرق الأوسط يعتبر حاليا
+                    المركز
+                    الأسرع نموا للمتاجر الإلكترونية ومواقع التسوق عبر الإنترنت، مثل نمشي، أمازون، نون، ماكس، اناس،
+                    فارفيتش،
+                    شي ان الصيني&nbsp;وغيرهم من المواقع العالمية والمحلية.. كل شيء أصبح الآن متوفر بمجرد نقرة ويصل
+                    بسرعة
+                    قياسية إلى عتبة منزلك.&nbsp;</p>
+            </div>
+        </div>
+
+    </div>
+    {#        <a href="https://youtube.com/c/FollowAndrew" style="position:fixed;bottom:0;color:teal;display:block;text-align:center;font-size:1em">https://youtube.com/c/FollowAndrew</a>#}
+</main>
+</body>
+</html>
