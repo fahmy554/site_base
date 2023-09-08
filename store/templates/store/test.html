@@ -9,8 +9,11 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
+            integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script !src="">
         $(function () {
             $(".toggle").on("click", function () {
@@ -48,6 +51,7 @@
         <div class="wrapper container">
             <ul>
                 <li><a href="#">الرئيسية</a></li>
+
                 <li><a href="#">متاجر</a></li>
                 <li><a href="#">عروض</a></li>
                 <li><a href="#">نصائح</a></li>
@@ -74,42 +78,76 @@
             </div>
 
         </div>
-        <div class='img_container row '>
-            <div class="flex_item">
-                <a href="#" class="item_link">
-                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+        <div class='row img_container'>
+            <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+                <div class="p-2 wrapper" style="height: 100%">
+                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                    <div class="row">
+                        <div class="col-4">
+                            <p>HELLO</p>
+                        </div>
+                         <div class="col-4">
+                            <p>HELLO</p>
+                        </div>
+                         <div class="col-4">
+                            <p>HELLO</p>
+                        </div>
+                    </div>
+                    <img class="store_img" src="{% static 'img/ff1.png'%}">
+                </div>
 
-                </a> <img class="store_img" src="{% static 'img/ff1.png'%}" width="50px" height="50px" alt="">
-            </div>
-            <div class="flex_item" style="">
-                <a href="#" class="item_link">
-                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-
-                </a> <img class="store_img" src="{% static 'img/ff1.png'%}" width="50px" height="50px" alt="">
-
-            </div>
-            <div class="flex_item" style="">
-                <a href="#" class="item_link">
-                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-
-                </a>
-                <img class="store_img" src="{% static 'img/ff1.png'%}" width="50px" height="50px" alt="">
 
             </div>
-            <div class="flex_item" style="">
-                <a href="#" class="item_link">
-                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+             <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+                <div class="p-2 wrapper " style="height: 100%">
+                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                    <img class="store_img" src="{% static 'img/ff1.png'%}">
+                </div>
 
-                </a> <img class="store_img" src="{% static 'img/ff1.png'%}" width="50px" height="50px" alt="">
-
-            </div>
-            <div class="flex_item" style="">
-                <a href="#" class="item_link">
-                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-
-                </a> <img class="store_img" src="{% static 'img/ff1.png'%}" alt="">
 
             </div>
+
+             <div class="col-sm-6 col-xs-6 col-lg-4">
+                <div class="p-2 wrapper  " style="height: 100%">
+                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                    <img class="store_img" src="{% static 'img/ff1.png'%}">
+                </div>
+
+
+            </div>
+             <div class="col-sm-6 col-xs-6 col-lg-4">
+                <div class="p-2 wrapper " style="height: 100%">
+                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                    <img class="store_img" src="{% static 'img/ff1.png'%}">
+                </div>
+
+
+            </div>
+<!--            <div class="col-8"><p class="border bg-light">hello</p></div>-->
+<!--            <div class="col-4 coupon mr-auto">-->
+<!--                <a href="#" class="item_link">-->
+<!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
+
+<!--                </a>-->
+<!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
+
+<!--            </div>-->
+<!--            <div class="col-4 coupon ">-->
+<!--                <a href="#" class="item_link">-->
+<!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
+
+<!--                </a>-->
+<!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
+
+<!--            </div>-->
+<!--            <div class="col-4 coupon">-->
+<!--                <a href="#" class="item_link">-->
+<!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
+
+<!--                </a>-->
+<!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
+
+<!--            </div>-->
 
 
         </div>
@@ -157,10 +195,10 @@
             </div>
         </div>
         <div>
-            <div class="f-bot table" style="text-align:center;font-size: 1.2rem " >
-<!--                <div class="f-bot-1 cell">-->
-<!--                    &nbsp;-->
-<!--                </div>-->
+            <div class="f-bot table" style="text-align:center;font-size: 1.2rem ">
+                <!--                <div class="f-bot-1 cell">-->
+                <!--                    &nbsp;-->
+                <!--                </div>-->
                 <div class="f-bot-2 cell">
                     © كل الحقوق محفوظة للموفر
                 </div>
