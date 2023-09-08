@@ -9,11 +9,9 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-            crossorigin="anonymous"></script>
-    <script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script !src="">
         $(function () {
             $(".toggle").on("click", function () {
                 if ($(".item").hasClass("active")) {
@@ -24,6 +22,8 @@
             });
         });
     </script>
+
+
 </head>
 <body>
 <nav class="my_nav">
