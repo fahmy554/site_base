@@ -49,7 +49,7 @@ def tgarba(request):
     posts = Post.objects.all()
     images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
 
-    images = glob(images_path + '\*.*')
+    images = glob(images_path + '/*.*')
     images_list = []
     for image in images:
         image = Image.open(image)
