@@ -11,7 +11,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import Category, Post
-from my_tennis_club.settings import STATIC_ROOT
+from my_tennis_club import settings
 
 def index(request):
     template = loader.get_template('store/index.html')
@@ -33,9 +33,9 @@ def image_to_base64(image):
 
 
 def tgarba(request):
-    images_path = os.path.join(STATIC_ROOT, 'img\stores_images')
+    images_path = os.path.join(settings.STATIC_ROOT, 'img\stores_images')
     print('images_path', images_path)
-    print('rooot', STATIC_ROOT)
+    print('rooot', settings.MEDIA_ROOT)
     images = glob(images_path + '\*.*')
     images_list = []
     for image in images:
@@ -49,7 +49,7 @@ def tgarba(request):
     data = {
         'posts': posts,
         'images_list': images_list,
-        'images_path': os.path.dirname(os.path.abspath(__file__))
+        'images_path': settings.MEDIA_ROOT
 
     }
     print(f'current dir {images}')
