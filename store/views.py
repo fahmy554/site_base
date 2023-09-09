@@ -45,11 +45,12 @@ def tgarba(request):
 
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
-
+    flags = os.listdir(os.path.join(settings.STATIC_ROOT, ""))
     data = {
         'posts': posts,
         'images_list': images_list,
-        'images_path': settings.MEDIA_ROOT
+        'images_path': settings.MEDIA_ROOT,
+        'flags': flags,
 
     }
     print(f'current dir {images}')
