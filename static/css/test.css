@@ -214,20 +214,70 @@ a {
 }
 
 .img_container {
-    /*display: flex;*/
-    /*gap: 5em;*/
-    /*flex-flow: row-reverse wrap;*/
-    /*padding: 12px;*/
-    /*gap: 10%;*/
-    /*position: relative;*/
-    /*!*flex-direction: row-reverse;*!*/
-    /*justify-content: stretch;*/
-    /*!*flex-wrap: nowrap;*!*/
-    /*!*border: 10px solid silver;*!*/
-    /*margin-top: 15px;*/
 
 
 }
+
+/*main section*/
+
+.main_div{
+    margin-bottom: 50px;
+    text-align: right;
+    margin-top: 25px;
+    background-color: rgb(186 201 223 / 25%);
+    padding: 12px;
+}
+.subhead{
+    font-size: 1.1rem;
+}
+.cell{
+    display: table-cell;
+    vertical-align: middle
+
+}
+.sign-up {
+    background-color: #fff;
+    border-radius: 0.25em;
+    max-width: 350px;
+    padding: 0.5em 0 0.5em 0.5em;
+    direction: ltr;
+}
+.table{
+    display: table;
+    width: 100%;
+}
+.s-btn input.alm-show {
+    display: block;
+}
+
+.s-btn input {
+    display: none;
+    height: 2.25em;
+    position: relative;
+    top: 2px;
+    width: 2.25em;
+}
+input{
+    outline: none;
+    border:none;
+    direction: rtl;
+}
+.s-btn.cell {
+    height: 2.25em;
+    width: 2.5em;
+    font-size:1rem
+}
+.s-email.cell {
+    height: 36px;
+    padding: 0 0.5em;
+}
+.mail{
+    font-size: 1.3rem;
+    color: gray;
+    text-space: 1px;
+    font-weight: normal;
+}
+
 .img_container{
     align-items: stretch;
 }
@@ -244,6 +294,7 @@ a {
     background-color: white;
     border-radius: 14px;
 }
+
 .coupon{
     /*flex-shrink: 1;*/
     /*padding: 8px;*/
