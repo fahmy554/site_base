@@ -58,7 +58,7 @@ def tgarba(request):
 
     flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img/stores_images"))
 
-    flags = ['img/' + fl for fl in flags]
+    flags = ['img/stores_images/' + fl for fl in flags]
     data = {
         'posts': posts,
         'images_list': images_list,
