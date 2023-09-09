@@ -63,7 +63,7 @@ def tgarba(request):
         'posts': posts,
         'images_list': images_list,
         'images_path': images_path,
-        'flags': flags,
+        'flags': [],
 
     }
     print(f'current dir {images}')
