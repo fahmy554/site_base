@@ -47,7 +47,7 @@ def tgarba(request):
 
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
-    images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images')
+    images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
 
     images = glob(images_path + '\*.*')
     images_list = []
