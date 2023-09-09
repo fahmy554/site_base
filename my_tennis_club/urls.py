@@ -22,7 +22,7 @@ from store import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.tgarba),
-    path('/fahmy', views.tgarba),
+    path('fahmy/', views.tgarba),
     path('store/', include('store.urls')),
 
 ]
