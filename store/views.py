@@ -11,7 +11,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import Category, Post
-
+from my_tennis_club.settings import STATIC_ROOT
 
 def index(request):
     template = loader.get_template('store/index.html')
@@ -30,7 +30,7 @@ def image_to_base64(image):
     return img_str
 
 
-images_path = os.path.join(os.getcwd(), 'static\img\stores_images')
+images_path = os.path.join(STATIC_ROOT, '\img\stores_images')
 images = glob(images_path + '\*.*')
 images_list = []
 for image in images:
