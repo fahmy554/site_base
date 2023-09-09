@@ -30,7 +30,9 @@ def image_to_base64(image):
     return img_str
 
 
-images_path = os.path.join(STATIC_ROOT, '\img\stores_images')
+images_path = os.path.join(STATIC_ROOT, 'img\stores_images')
+print('images_path',images_path)
+print('rooot',STATIC_ROOT)
 images = glob(images_path + '\*.*')
 images_list = []
 for image in images:
