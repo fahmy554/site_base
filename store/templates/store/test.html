@@ -34,7 +34,7 @@
 <nav class="my_nav">
     <ul class="menu">
         <li class="logo"><a href="#">
-{#            Number of images_list: {{ images_path }}#}
+            {#            Number of images_list: {{ images_path }}#}
             <input value="" placeholder="ابحث عن منتج"
             >
             <!--            <img class="log_img" src="{% static 'img/fahmy.png' %}" alt="" style="float: right;border-radius: 12px">-->
@@ -115,9 +115,11 @@
                                 <div class="store col-4 col-lg-4 col-md-4 mb-2">
                                     <div>
                                         <a href="#">
-                                            <img src="data:image/png;base64,{{ images }}" alt="fff" height="50"
-                                                 width="100"  loading="lazy">>
-
+                                            {#                                            <img src="data:image/png;base64,{{ images }}" alt="fff" height="50"#}
+                                            {#                                                 width="100"  loading="lazy">#}
+                                            <img src="https://cdn.almowafir.com/files/w200_amazon.jpg"
+                                                 srcset="https://cdn.almowafir.com/files/w100_amazon.jpg 100w, https://cdn.almowafir.com/files/w200_amazon.jpg 200w"
+                                                 loading="eager" sizes="92px" alt="أمازون" height="100" width="200">
                                         </a>
 
                                     </div>
@@ -206,7 +208,7 @@
             </div>
         </div>
         <div class="page_footer row" style="text-align: right;font-size: 25px">
-{#        <img src="{% static 'stores_images/w200_adidas-1.jpg' %}" alt="problem"/>#}
+            {#        <img src="{% static 'stores_images/w200_adidas-1.jpg' %}" alt="problem"/>#}
             {% for flag in flags %}
                 <img src="{% static flag %}" alt="problem"/>
             {% endfor %}
