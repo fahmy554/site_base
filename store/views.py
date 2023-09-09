@@ -48,7 +48,7 @@ def tgarba(request):
     data = {
         'posts': posts,
         'images_list': images_list,
-        'images_path': STATIC_ROOT
+        'images_path': os.path.dirname(os.path.abspath(__file__))
 
     }
     print(f'current dir {images}')
