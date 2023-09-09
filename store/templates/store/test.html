@@ -34,7 +34,7 @@
 <nav class="my_nav">
     <ul class="menu">
         <li class="logo"><a href="#">
-            Number of images_list: {{ images_path }}
+{#            Number of images_list: {{ images_path }}#}
             <input value="" placeholder="ابحث عن منتج"
             >
             <!--            <img class="log_img" src="{% static 'img/fahmy.png' %}" alt="" style="float: right;border-radius: 12px">-->
@@ -116,7 +116,7 @@
                                     <div>
                                         <a href="#">
                                             <img src="data:image/png;base64,{{ images }}" alt="fff" height="50"
-                                                 width="100">
+                                                 width="100"  loading="eager">
 
                                         </a>
 
