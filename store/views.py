@@ -13,6 +13,7 @@ from django.template import loader
 from .models import Category, Post
 from my_tennis_club import settings
 
+
 def index(request):
     template = loader.get_template('store/index.html')
     posts = Post.objects.all()
@@ -29,14 +30,15 @@ def image_to_base64(image):
     img_str = img_str.decode("utf-8")  # convert to str and cut b'' chars
     return img_str
 
+
 images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images')
 
 images = glob(images_path + '\*.*')
 images_list = []
 for image in images:
-        image = Image.open(image)
-        image64 = image_to_base64(image)
-        images_list.append(image64)
+    image = Image.open(image)
+    image64 = image_to_base64(image)
+    images_list.append(image64)
 
 
 def tgarba(request):
@@ -45,13 +47,22 @@ def tgarba(request):
 
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
+    images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images')
+
+    images = glob(images_path + '\*.*')
+    images_list = []
+    for image in images:
+        image = Image.open(image)
+        image64 = image_to_base64(image)
+        images_list.append(image64)
+
     flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img"))
 
     flags = ['img/' + fl for fl in flags]
     data = {
         'posts': posts,
         'images_list': images_list,
-        'images_path': settings.MEDIA_ROOT,
+        'images_path': settings.STATIC_ROOT,
         'flags': flags,
 
     }
