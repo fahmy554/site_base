@@ -30,18 +30,19 @@ def image_to_base64(image):
     return img_str
 
 
-images_path = os.path.join(STATIC_ROOT, 'img\stores_images')
-print('images_path',images_path)
-print('rooot',STATIC_ROOT)
-images = glob(images_path + '\*.*')
-images_list = []
-for image in images:
-    image = Image.open(image)
-    image64 = image_to_base64(image)
-    images_list.append(image64)
 
 
 def tgarba(request):
+    images_path = os.path.join(STATIC_ROOT, 'img\stores_images')
+    print('images_path', images_path)
+    print('rooot', STATIC_ROOT)
+    images = glob(images_path + '\*.*')
+    images_list = []
+    for image in images:
+        image = Image.open(image)
+        image64 = image_to_base64(image)
+        images_list.append(image64)
+
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
 
