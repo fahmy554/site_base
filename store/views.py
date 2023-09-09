@@ -29,7 +29,7 @@ def image_to_base64(image):
     img_str = img_str.decode("utf-8")  # convert to str and cut b'' chars
     return img_str
 
-images_path = os.path.join(settings.STATIC_ROOT, 'stores_images')
+images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images')
 
 images = glob(images_path + '\*.*')
 images_list = []
