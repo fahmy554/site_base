@@ -127,7 +127,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT=BASE_DIR / 'static'
 STATICFILES_DIR=[
     os.path.join(BASE_DIR,'members/static'),
-    os.path.join(BASE_DIR,'store/static')
+    # os.path.join(BASE_DIR,'static/'),
+    # os.path.join(BASE_DIR,'members/static/img/stores_images'),
+    os.path.join(BASE_DIR,'store/static'),
+    # os.path.join(BASE_DIR,'store/static/img/stores_images'),
+    # os.path.join(BASE_DIR,'static/img/stores_images')
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

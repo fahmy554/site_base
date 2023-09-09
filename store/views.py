@@ -29,25 +29,25 @@ def image_to_base64(image):
     img_str = img_str.decode("utf-8")  # convert to str and cut b'' chars
     return img_str
 
+images_path = os.path.join(settings.STATIC_ROOT, 'stores_images')
 
-
-
-def tgarba(request):
-    images_path = os.path.join(settings.STATIC_ROOT, 'img\stores_images')
-    # print('images_path', images_path)
-    # print('rooot', settings.MEDIA_ROOT)
-    images = glob(images_path + '\*.*')
-    images_list = []
-    for image in images:
+images = glob(images_path + '\*.*')
+images_list = []
+for image in images:
         image = Image.open(image)
         image64 = image_to_base64(image)
         images_list.append(image64)
 
+
+def tgarba(request):
+    # print('images_path', images_path)
+    # print('rooot', settings.MEDIA_ROOT)
+
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
-    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img/stores_images"))
+    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "stores_images"))
 
-    flags = ['img/stores_images/' + fl for fl in flags]
+    flags = ['stores_images/' + fl for fl in flags]
     data = {
         'posts': posts,
         'images_list': images_list,
