@@ -18,9 +18,10 @@ from . import settings
 from django.contrib import admin
 from django.urls import path, include
 from .views import index
+from store import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('', views.tgarba),
     path('store/', include('store.urls')),
 
 ]

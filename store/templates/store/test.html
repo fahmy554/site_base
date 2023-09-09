@@ -9,7 +9,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
-    
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
             integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
@@ -59,8 +59,7 @@
         </div>
     </div>
     <div class="container">
-        <h1 class="page-title" style="text-align: center">جميع كوبونات وعروض متاجر جمهورية
-        </h1>
+        <h1 class="page-title" style="text-align: center">جميع كوبونات وعروض متاجر جمهورية</h1>
         <div class="page-header">
             <div class="arabic" style="padding: 25px">
                 <h3 dir="rtl" class="arabic">مواقع تسوق اون لاين، اكواد خصم وكوبونات تخفيض 2023</h3>
@@ -78,78 +77,130 @@
             </div>
 
         </div>
-        <div class='row img_container'>
-            <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
-                <div class="p-2 wrapper" style="height: 100%">
-                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                    <div class="row">
-                        <div class="col-4">
-                            <p>HELLO</p>
+
+        <div class="row main_div">
+            <div class="col-lg-4">
+                <aside>
+                    <div class="m-menu-subscribe">
+                        <div class="subhead">إشترك في قائمة الموفر البريدية</div>
+                        <div class="mail">احصل على عروض وكوبونات حصرية مباشرة على بريدك الالكتروني</div>
+                        <div class="mail-signup" data-name="sidebar">
+                            <form class="sub">
+                                <div class="sign-up">
+                                    <div class="table">
+
+                                        <div class="s-btn cell"><input class="alm-show" type="image"
+                                                                       src="https://cdn.almowafir.com/1/alw_ic_send_email_ar.png"
+                                                                       name="subscribe" alt="Sub" height="70" width="70"
+                                                                       loading="lazy">
+
+                                        </div>
+                                         <div class="s-email cell"><input class="s-email-input alm-show" type="email"
+                                                                         placeholder="ادخل بريدك الالكتروني"
+                                                                         name="email-submit">
+                                            <div class="s-success"></div>
+                                        </div>
+                                    </div>
+                                    <div class="s-error"></div>
+                                </div>
+                            </form>
                         </div>
-                         <div class="col-4">
-                            <p>HELLO</p>
-                        </div>
-                         <div class="col-4">
-                            <p>HELLO</p>
+                        <div class="store-grid row">
+                            <h2 style="direction: rtl" class="mb-2"> اختر متجرك المفضل</h2>
+                            {% for images in images_list %}
+
+                                <div class="store col-4 col-lg-4 col-md-4 mb-2">
+                                    <div>
+                                        <a href="#">
+                                            <img src="data:image/png;base64,{{ images }}" alt="fff" height="50"
+                                                 width="100">
+
+                                        </a>
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+
                         </div>
                     </div>
-                    <img class="store_img" src="{% static 'img/ff1.png'%}">
+                </aside>
+            </div>
+            <div class="col-lg-8">
+                <div class='row img_container'>
+                    <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+                        <div class="p-2 wrapper" style="height: 100%">
+                            <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                            <div class="row">
+                                <div class="col-4">
+                                    <p>HELLO</p>
+                                </div>
+                                <div class="col-4">
+                                    <p>HELLO</p>
+                                </div>
+                                <div class="col-4">
+                                    <p>HELLO</p>
+                                </div>
+                            </div>
+                            <img class="store_img" src="{% static 'img/ff1.png' %}">
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+                        <div class="p-2 wrapper " style="height: 100%">
+                            <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                            <img class="store_img" src="{% static 'img/ff1.png' %}">
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-sm-6 col-xs-6 col-lg-4">
+                        <div class="p-2 wrapper  " style="height: 100%">
+                            <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                            <img class="store_img" src="{% static 'img/ff1.png' %}">
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6 col-xs-6 col-lg-4">
+                        <div class="p-2 wrapper " style="height: 100%">
+                            <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                            <img class="store_img" src="{% static 'img/ff1.png' %}">
+                        </div>
+
+
+                    </div>
+                    <!--            <div class="col-8"><p class="border bg-light">hello</p></div>-->
+                    <!--            <div class="col-4 coupon mr-auto">-->
+                    <!--                <a href="#" class="item_link">-->
+                    <!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
+
+                    <!--                </a>-->
+                    <!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
+
+                    <!--            </div>-->
+                    <!--            <div class="col-4 coupon ">-->
+                    <!--                <a href="#" class="item_link">-->
+                    <!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
+
+                    <!--                </a>-->
+                    <!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
+
+                    <!--            </div>-->
+                    <!--            <div class="col-4 coupon">-->
+                    <!--                <a href="#" class="item_link">-->
+                    <!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
+
+                    <!--                </a>-->
+                    <!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
+
+                    <!--            </div>-->
+
+
                 </div>
 
-
             </div>
-             <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
-                <div class="p-2 wrapper " style="height: 100%">
-                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                    <img class="store_img" src="{% static 'img/ff1.png'%}">
-                </div>
-
-
-            </div>
-
-             <div class="col-sm-6 col-xs-6 col-lg-4">
-                <div class="p-2 wrapper  " style="height: 100%">
-                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                    <img class="store_img" src="{% static 'img/ff1.png'%}">
-                </div>
-
-
-            </div>
-             <div class="col-sm-6 col-xs-6 col-lg-4">
-                <div class="p-2 wrapper " style="height: 100%">
-                     <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                    <img class="store_img" src="{% static 'img/ff1.png'%}">
-                </div>
-
-
-            </div>
-<!--            <div class="col-8"><p class="border bg-light">hello</p></div>-->
-<!--            <div class="col-4 coupon mr-auto">-->
-<!--                <a href="#" class="item_link">-->
-<!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
-
-<!--                </a>-->
-<!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
-
-<!--            </div>-->
-<!--            <div class="col-4 coupon ">-->
-<!--                <a href="#" class="item_link">-->
-<!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
-
-<!--                </a>-->
-<!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
-
-<!--            </div>-->
-<!--            <div class="col-4 coupon">-->
-<!--                <a href="#" class="item_link">-->
-<!--                    <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>-->
-
-<!--                </a>-->
-<!--                <img class="store_img" src="{% static 'img/ff1.png'%}">-->
-
-<!--            </div>-->
-
-
         </div>
         <div class="page_footer row" style="text-align: right;font-size: 25px">
 
