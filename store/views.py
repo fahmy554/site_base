@@ -62,7 +62,7 @@ def tgarba(request):
     data = {
         'posts': posts,
         'images_list': images_list,
-        'images_path': settings.STATIC_ROOT,
+        'images_path': images_path,
         'flags': flags,
 
     }
