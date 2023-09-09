@@ -48,21 +48,23 @@ def tgarba(request):
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
     images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
-
-    images = glob(images_path + '/*.*')
-    images_list = []
-    for image in images:
-        image = Image.open(image)
-        image64 = image_to_base64(image)
-        images_list.append(image64)
+    urlss = os.path.join(settings.STATIC_ROOT, 'img','urls_txt.css')
+    urlss=[url.strip() for url in open(urlss,'r').readlines()]
+    print(urlss)
+    # images = glob(images_path + '/*.*')
+    # images_list = []
+    # for image in images:
+    #     image = Image.open(image)
+    #     image64 = image_to_base64(image)
+    #     images_list.append(image64)
 
     flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img/stores_images"))
 
     flags = ['img/stores_images/' + fl for fl in flags]
     data = {
         'posts': posts,
-        'images_list': images_list,
-        'images_path': images_path,
+        'images_list': urlss,
+        'images_path': urlss,
         'flags': [],
 
     }

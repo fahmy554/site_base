@@ -46,9 +46,9 @@ for store in stores:
     url=store.get('src')
     r=requests.get(url,headers=burp0_headers,cookies=burp0_cookies)
     print(url)
-    name=url.split('/')[-1]
-    print(r.text)
-    if r.status_code == 200:
-        with open(f'stores_images/{name}', 'wb') as f:
-            for chunk in r.iter_content(1024):
-                f.write(chunk)
+    # name=url.split('/')[-1]
+    # print(r.text)
+    # if r.status_code == 200:
+    #     with open(f'stores_images/{name}', 'wb') as f:
+    #         for chunk in r.iter_content(1024):
+    #             f.write(chunk)
