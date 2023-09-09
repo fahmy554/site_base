@@ -327,6 +327,8 @@ input{
 }
 .store-wrapper{
     padding: 12px;
+    margin:5px;
+    border-radius: 15px;
 }
 .store-link p{
     color: black;
@@ -370,8 +372,9 @@ input{
 .posts{
     margin-top: 20px;
 }
-.popost-wrapper{
+.post-wrapper{
     padding: 10px;
+
 }
 .post{
     border-radius: 12px;
