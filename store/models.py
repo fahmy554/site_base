@@ -19,9 +19,11 @@ class Category(models.Model):
 
 class Store(models.Model):
     store_name = models.CharField(max_length=100)
+    store_img_url = models.CharField(max_length=100, default='', null=True)
     slug = models.SlugField(null=True, blank=True, allow_unicode=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
-    store_logo = models.ImageField(upload_to='stores_images/', verbose_name=_('Image'),null=True,blank=True)
+    store_logo = models.ImageField(upload_to='stores_images/', verbose_name=_('Image'), null=True, blank=True)
+
     def __str__(self):
         return self.store_name
 
@@ -32,11 +34,12 @@ class Store(models.Model):
 
     class Meta:
         verbose_name = _("Store")
-        verbose_name_plural = _("Stories")
+        verbose_name_plural = _("Stores")
 
 
 class Store_Image(models.Model):
     Store = models.ForeignKey(Store, on_delete=models.CASCADE, verbose_name=_('Store'))
+
     # StoreImage = models.ImageField(upload_to='stores_images/', verbose_name=_('Image'))
 
     def __str__(self):
@@ -48,8 +51,8 @@ class Store_Image(models.Model):
 
 
 class Post(models.Model):
-    post_store = models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
-    post_txt = models.CharField(max_length=100)
+    store = models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank=True)
+    txt = models.CharField(max_length=100)
     discount_code = models.CharField(max_length=100, null=True, blank=True)
     offer = models.CharField(max_length=100)
     extra_text = models.CharField(max_length=100, default='كوبون فعال وموثوق', null=True, blank=True)
@@ -68,4 +71,4 @@ class Post(models.Model):
         verbose_name_plural = _("Posts")
 
     def __str__(self):
-        return self.post_store.__str__() + ' ' + self.offer + ' ' + self.percentage
+        return self.store.__str__() + ' ' + self.offer + ' ' + self.percentage

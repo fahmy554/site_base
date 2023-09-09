@@ -1,0 +1,174 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+          integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>couponzsales</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/stores_images/w200_adidas-1.jpg' %}">
+
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
+            integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script !src="">
+        $(function () {
+            $(".toggle").on("click", function () {
+                if ($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                } else {
+                    $(".item").addClass("active");
+                }
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+{% include "store/nav.html" %}
+
+<main>
+    <div class="" style="background-color: whitesmoke">
+        <div class="wrapper container">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+
+                <li><a href="#">متاجر</a></li>
+                <li><a href="#">عروض</a></li>
+                <li><a href="#">نصائح</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+
+        {#        {% include "store/header.html" %}#}
+
+        <div class="row main_div">
+            <div class="col-lg-4">
+                {% block left_side %}
+                    <aside>
+                        <div class="m-menu-subscribe">
+                            <div class="subhead">إشترك في قائمة الموفر البريدية</div>
+                            <div class="mail">احصل على عروض وكوبونات حصرية مباشرة على بريدك الالكتروني</div>
+                            <div class="mail-signup" data-name="sidebar">
+                                <form class="sub">
+                                    <div class="sign-up">
+                                        <div class="table">
+
+                                            <div class="s-btn cell"><input class="alm-show" type="image"
+                                                                           src="https://cdn.almowafir.com/1/alw_ic_send_email_ar.png"
+                                                                           name="subscribe" alt="Sub" height="70"
+                                                                           width="70"
+                                                                           loading="lazy">
+
+                                            </div>
+                                            <div class="s-email cell"><input class="s-email-input alm-show" type="email"
+                                                                             placeholder="ادخل بريدك الالكتروني"
+                                                                             name="email-submit">
+                                                <div class="s-success"></div>
+                                            </div>
+                                        </div>
+                                        <div class="s-error"></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="store-grid row">
+                                <h2 style="direction: rtl" class="mb-2"> اختر متجرك المفضل</h2>
+                                {#                            {% for post in posts %}#}
+                                {#                            	{{ post.store. }}#}
+                                {#                            {% endfor %}#}
+
+                                {% for store in stores %}
+
+                                    <div class="col-4 col-lg-4 col-md-4 mb-2">
+                                        <div>
+                                            <a href="{{ store.slug }}">
+                                                <img src="{{ store.store_img_url }}" alt="fff" height="50"
+                                                     width="100" loading="lazy">
+                                                {#                                            <img src="https://cdn.almowafir.com/files/w200_amazon.jpg"#}
+                                                {#                                                 srcset="https://cdn.almowafir.com/files/w100_amazon.jpg 100w, https://cdn.almowafir.com/files/w200_amazon.jpg 200w"#}
+                                                {#                                                 loading="eager" sizes="92px" alt="أمازون" height="100" width="200">#}
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </aside>
+                {% endblock %}
+
+            </div>
+            <div class="col-lg-8">
+                {% block  right_side  %}
+                        <div class='row img_container'>
+        <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+            <div class="p-2 wrapper" style="height: 100%">
+                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                <div class="row">
+                    <div class="col-4">
+                        <p>HELLO</p>
+                    </div>
+                    <div class="col-4">
+                        <p>HELLO</p>
+                    </div>
+                    <div class="col-4">
+                        <p>HELLO</p>
+                    </div>
+                </div>
+                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+            </div>
+
+
+        </div>
+        <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+            <div class="p-2 wrapper " style="height: 100%">
+                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-6 col-xs-6 col-lg-4">
+            <div class="p-2 wrapper  " style="height: 100%">
+                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+            </div>
+
+
+        </div>
+        <div class="col-sm-6 col-xs-6 col-lg-4">
+            <div class="p-2 wrapper " style="height: 100%">
+                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+                {% endblock %}
+
+            </div>
+        </div>
+
+        {% include "store/footer.html" %}
+
+
+    </div>
+
+</main>
+</body>
+</html>

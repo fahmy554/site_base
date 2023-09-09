@@ -110,12 +110,16 @@
                         </div>
                         <div class="store-grid row">
                             <h2 style="direction: rtl" class="mb-2"> اختر متجرك المفضل</h2>
-                            {% for images in images_list %}
+{#                            {% for post in posts %}#}
+{#                            	{{ post.store. }}#}
+{#                            {% endfor %}#}
+
+                            {% for store in stores %}
 
                                 <div class="store col-4 col-lg-4 col-md-4 mb-2">
                                     <div>
-                                        <a href="#">
-                                                                                        <img src="{{ images }}" alt="fff" height="50"
+                                        <a href="{{ store.slug }}">
+                                                                                        <img src="{{ store.store_img_url }}" alt="fff" height="50"
                                                                                              width="100"  loading="lazy">
 {#                                            <img src="https://cdn.almowafir.com/files/w200_amazon.jpg"#}
 {#                                                 srcset="https://cdn.almowafir.com/files/w100_amazon.jpg 100w, https://cdn.almowafir.com/files/w200_amazon.jpg 200w"#}

@@ -1,0 +1,28 @@
+
+<div class="left-side">
+        <div class="store-text-links">
+            <h2>متاجر جديده</h2>
+            {% if new_stores %}
+                <ul class="new-stores-list">
+                    {% for new_store in new_stores %}
+                        <li class="new-store-item"><a href="/store/{{ new_store.slug }}">{{ new_store.slug }}</a></li>
+                    {% endfor %}
+
+                </ul>
+            {% endif %}
+
+        </div>
+        <div class="new-blogs">
+            <h2>مقالات جديده</h2>
+            {% if new_stores %}
+                <ul class="new-blogs-list">
+                    {% for new_store in new_stores %}
+                        <li class="new-blogs-item"><a href="/store/{{ new_store.slug }}">{{ new_store.slug }}</a></li>
+                    {% endfor %}
+
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+

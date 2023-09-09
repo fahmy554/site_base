@@ -10,15 +10,38 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Category, Post
+from .models import Category, Post,Store
 from my_tennis_club import settings
 
 
 def index(request):
-    template = loader.get_template('store/index.html')
+
     posts = Post.objects.all()
+    stores = Store.objects.all()
+    # noons=Post.objects.filter(store__slug__contains='no')
+    # print(noons)
+    images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
+    urlss = os.path.join(settings.STATIC_ROOT, 'img', 'urls_txt.css')
+    urlss = [url.strip() for url in open(urlss, 'r').readlines()]
+    # images = glob(images_path + '/*.*')
+    # images_list = []
+    # for image in images:
+    #     image = Image.open(image)
+    #     image64 = image_to_base64(image)
+    #     images_list.append(image64)
+
+    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img/stores_images"))
+
+    flags = ['img/stores_images/' + fl for fl in flags]
     data = {
-        'posts': posts
+        'posts': posts,
+        'stores': stores,
+        'new_stores': stores,
+        'new_blogs': stores,
+        'images_list': urlss,
+        'images_path': urlss,
+        'flags': [],
+
     }
     return render(request, 'store/index.html', context=data)
 
@@ -47,6 +70,7 @@ def tgarba(request):
 
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
+    stores = Store.objects.all()
     images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
     urlss = os.path.join(settings.STATIC_ROOT, 'img','urls_txt.css')
     urlss=[url.strip() for url in open(urlss,'r').readlines()]
@@ -63,6 +87,7 @@ def tgarba(request):
     flags = ['img/stores_images/' + fl for fl in flags]
     data = {
         'posts': posts,
+        'stores': stores,
         'images_list': urlss,
         'images_path': urlss,
         'flags': [],
@@ -77,3 +102,34 @@ def category_detail(slug):
     cat = Category.objects.get(slug=slug)
     print(cat)
     return HttpResponse(template.render())
+
+
+def single_store(request,slug):
+    posts = Post.objects.filter(store__slug=slug)
+    stores = Store.objects.all()
+    # noons=Post.objects.filter(store__slug__contains='no')
+    # print(noons)
+    images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
+    urlss = os.path.join(settings.STATIC_ROOT, 'img', 'urls_txt.css')
+    urlss = [url.strip() for url in open(urlss, 'r').readlines()]
+    # images = glob(images_path + '/*.*')
+    # images_list = []
+    # for image in images:
+    #     image = Image.open(image)
+    #     image64 = image_to_base64(image)
+    #     images_list.append(image64)
+
+    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img/stores_images"))
+
+    flags = ['img/stores_images/' + fl for fl in flags]
+    data = {
+        'posts': posts,
+        'stores': stores,
+        'new_stores': stores,
+        'new_blogs': stores,
+        'images_list': urlss,
+        'images_path': urlss,
+        'flags': [],
+
+    }
+    return render(request, 'store/store.html', context=data)

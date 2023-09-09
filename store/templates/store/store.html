@@ -1,0 +1,66 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block left_side %}
+    {% include 'store/left_blogs.html' %}
+
+
+{% endblock %}
+
+{% block right_side %}
+    <div class="row flex-row-reverse ">
+        <div class="col-4 single-store">
+            <div class="">
+                <img decoding="async" src="https://cdn.almowafir.com/store_logos/noon_alm1_ar.png"
+                     alt="كود خصم نون: ALM1" title="كود خصم نون: ALM1">
+            </div>
+        </div>
+        <div class="col-8">
+            <section>
+                <h2>كود خصم نون 2023 كوبون 10% اكواد وعروض Noon مصر حصرية</h2>
+
+                <div class="d-inline-block">
+                    <div class="sp-h-num">15 كوبونات</div>
+
+                </div>
+                <h6>آخر تحديث: 8/9/2023</h6>
+            </section>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <section>
+            <div class="row posts">
+                {% for post in posts %}
+
+                    <div class=" col-lg-6 col-md-6 col-xs-6 post-wrapper">
+                        <div class="bg-light post ">
+                            <div class="border-bottom border-black p-3">
+                                <a href="">
+                                    <img src="{{ post.store.store_img_url }}" alt="fff" height="50" width="100"
+                                         loading="lazy" class="m-auto">
+                                </a>
+
+                            </div>
+                            <div class=" p-2 post-validation">
+                                كوبون فعال وموثوق
+                            </div>
+                            <a href="" class="post-link">
+                                <div style="text-align: center;font-size: 1.2rem" class=" p-3 bg-success">احصل على
+                                    الكود
+                                </div>
+
+                            </a>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+
+
+        </section>
+    </div>
+{% endblock %}
