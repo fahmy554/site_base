@@ -56,7 +56,7 @@ def tgarba(request):
         image64 = image_to_base64(image)
         images_list.append(image64)
 
-    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img"))
+    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img/stores_images"))
 
     flags = ['img/' + fl for fl in flags]
     data = {
