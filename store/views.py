@@ -45,9 +45,9 @@ def tgarba(request):
 
     template = loader.get_template('store/test.html')
     posts = Post.objects.all()
-    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "stores_images"))
+    flags = os.listdir(os.path.join(settings.STATIC_ROOT, "img"))
 
-    flags = ['stores_images/' + fl for fl in flags]
+    flags = ['img/' + fl for fl in flags]
     data = {
         'posts': posts,
         'images_list': images_list,
