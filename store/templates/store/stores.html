@@ -1,0 +1,36 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block left_side %}
+    {% include 'store/bread.html' %}
+  {% include 'store/left_blogs.html' %}
+
+
+{% endblock %}
+{% block right_side %}
+    <div>
+        <div class="row">
+            {% for store in stores %}
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="bg-light store-wrapper">
+                        <a href="/store/{{ store.slug }}" class="store-link">
+                            <div class="border-3 border-black store">
+                                <img src="{{ store.store_img_url }}" alt="fff" height="100" width="200"
+                                     loading="lazy" class="m-auto">
+                            </div>
+                            <hr style="border-bottom: rgb(128,128,128) 1px solid;margin: 16px ">
+                            <p style="">{{ store.text }}</p>
+
+
+                        </a>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+{% endblock %}

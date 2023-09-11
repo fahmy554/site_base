@@ -1,0 +1,10 @@
+{% load i18n %}
+<div class="page-title-right">
+   <ol class="breadcrumb m-0">
+      {% if crumbs %}
+            {% for c in crumbs %}
+                <li class="breadcrumb-item {{c.2}}"><a href="{{c.1}}">{{c.0}}</a></li>
+            {% endfor %}
+      {% endif %}
+   </ol>
+</div>
