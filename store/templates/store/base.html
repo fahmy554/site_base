@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
           integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+          rel="stylesheet"/>
+
     <title>couponzsales</title>
     <link rel="icon" type="image/x-icon" href="{% static 'img/stores_images/w200_adidas-1.jpg' %}">
 
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav2.css' %}">
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
@@ -32,15 +36,16 @@
 </head>
 <body>
 
-{% include "store/nav.html" %}
+{% include "store/nav2.html" %}
 
 <main>
     <div class="" style="background-color: whitesmoke">
         <div class="wrapper container">
             <ul>
-                <li><a href="#">الرئيسية</a></li>
+                <li><a href="{% url 'stores' %}">الرئيسية</a></li>
+                {#                <li><a href="{% url 'views.index' %}">الرئيسية</a></li>#}
+                <li><a href="{% url 'stores' %}">متاجر</a></li>
 
-                <li><a href="#">متاجر</a></li>
                 <li><a href="#">عروض</a></li>
                 <li><a href="#">نصائح</a></li>
             </ul>
@@ -109,55 +114,55 @@
 
             </div>
             <div class="col-lg-8">
-                {% block  right_side  %}
-                        <div class='row img_container'>
-        <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
-            <div class="p-2 wrapper" style="height: 100%">
-                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                <div class="row">
-                    <div class="col-4">
-                        <p>HELLO</p>
+                {% block  right_side %}
+                    <div class='row img_container'>
+                        <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+                            <div class="p-2 wrapper" style="height: 100%">
+                                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <p>HELLO</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>HELLO</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>HELLO</p>
+                                    </div>
+                                </div>
+                                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
+                            <div class="p-2 wrapper " style="height: 100%">
+                                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-sm-6 col-xs-6 col-lg-4">
+                            <div class="p-2 wrapper  " style="height: 100%">
+                                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+                            </div>
+
+
+                        </div>
+                        <div class="col-sm-6 col-xs-6 col-lg-4">
+                            <div class="p-2 wrapper " style="height: 100%">
+                                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
+                                <img class="store_img" src="{% static 'img/fahmy.png' %}">
+                            </div>
+
+
+                        </div>
+
+
                     </div>
-                    <div class="col-4">
-                        <p>HELLO</p>
-                    </div>
-                    <div class="col-4">
-                        <p>HELLO</p>
-                    </div>
-                </div>
-                <img class="store_img" src="{% static 'img/fahmy.png' %}">
-            </div>
-
-
-        </div>
-        <div class="col-sm-6 col-xs-6 col-lg-4 flex-fill">
-            <div class="p-2 wrapper " style="height: 100%">
-                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                <img class="store_img" src="{% static 'img/fahmy.png' %}">
-            </div>
-
-
-        </div>
-
-        <div class="col-sm-6 col-xs-6 col-lg-4">
-            <div class="p-2 wrapper  " style="height: 100%">
-                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                <img class="store_img" src="{% static 'img/fahmy.png' %}">
-            </div>
-
-
-        </div>
-        <div class="col-sm-6 col-xs-6 col-lg-4">
-            <div class="p-2 wrapper " style="height: 100%">
-                <p>5% كوبون خصم نون مصر 2023 | عروض نون لغاية 25 جنيه</p>
-                <img class="store_img" src="{% static 'img/fahmy.png' %}">
-            </div>
-
-
-        </div>
-
-
-    </div>
 
                 {% endblock %}
 
@@ -170,5 +175,15 @@
     </div>
 
 </main>
+
+<script>
+    const menuToggle = document.querySelector(".menu-bars");
+    const nav = document.querySelector("nav ul");
+
+
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("slide");
+    });
+</script>
 </body>
 </html>

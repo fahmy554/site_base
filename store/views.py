@@ -10,11 +10,13 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.urls import reverse
+
 from .models import Category, Post,Store
 from my_tennis_club import settings
 
 
-def index(request):
+def stores(request):
 
     posts = Post.objects.all()
     stores = Store.objects.all()
@@ -41,9 +43,15 @@ def index(request):
         'images_list': urlss,
         'images_path': urlss,
         'flags': [],
+        'crumbs' : [
+                ("جميع المتاجر", reverse('stores')),
+                ("جميع المتاجر", reverse('stores')),
+                ("جميع المتاجر", reverse('stores')),
+
+            ],
 
     }
-    return render(request, 'store/index.html', context=data)
+    return render(request, 'store/stores.html', context=data)
 
 
 def image_to_base64(image):
@@ -98,7 +106,7 @@ def tgarba(request):
 
 
 def category_detail(slug):
-    template = loader.get_template('store/index.html')
+    template = loader.get_template('store/stores.html')
     cat = Category.objects.get(slug=slug)
     print(cat)
     return HttpResponse(template.render())
@@ -106,9 +114,16 @@ def category_detail(slug):
 
 def single_store(request,slug):
     posts = Post.objects.filter(store__slug=slug)
+
+
     stores = Store.objects.all()
+    store = Store.objects.get(slug=slug)
+    # Post.objects.filter(las)
+    print(f'txt {store.text}')
     # noons=Post.objects.filter(store__slug__contains='no')
     # print(noons)
+    for post in posts:
+        print(post.last_modified,'ssss')
     images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images/')
     urlss = os.path.join(settings.STATIC_ROOT, 'img', 'urls_txt.css')
     urlss = [url.strip() for url in open(urlss, 'r').readlines()]
@@ -124,6 +139,8 @@ def single_store(request,slug):
     flags = ['img/stores_images/' + fl for fl in flags]
     data = {
         'posts': posts,
+        'store': store,
+        'posts_count': len(posts),
         'stores': stores,
         'new_stores': stores,
         'new_blogs': stores,

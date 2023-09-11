@@ -15,10 +15,10 @@ body {
     font-size: 0.9rem;;
 }
 
-nav {
-    background: #222;
-    padding: 5px 20px;
-}
+/*nav {*/
+/*    background: #222;*/
+/*    padding: 5px 20px;*/
+/*}*/
 
 .my_nav {
     min-height: 80px;
@@ -145,9 +145,9 @@ a {
         justify-content: center;
     }
 
-    .logo {
-        flex: 1;
-    }
+    /*.logo {*/
+    /*    flex: 1;*/
+    /*}*/
 
     .item.button {
         width: auto;
@@ -159,11 +159,11 @@ a {
         order: 2;
     }
 
-    .logo img {
-        width: 40%;
-        max-height: 80px;
-        /*height:40%*/
-    }
+    /*.logo img {*/
+    /*    width: 40%;*/
+    /*    max-height: 80px;*/
+    /*    !*height:40%*!*/
+    /*}*/
 
     .button.secondary {
         border: 0;
@@ -326,9 +326,17 @@ input{
     display: block;
 }
 .store-wrapper{
-    padding: 12px;
+    padding: 8px;
     margin:5px;
+    font-size: 15px;
     border-radius: 15px;
+    border: 1px solid transparent;
+
+}
+.store-wrapper:hover{
+    border: 1px solid cyan;
+     border-radius: 15px;
+    /*border: 1px solid transparent;*/
 }
 .store-link p{
     color: black;
@@ -371,6 +379,12 @@ input{
 }
 .posts{
     margin-top: 20px;
+     justify-content: center;
+    align-content: center;
+}
+
+.post-offer{
+    padding: 20px;
 }
 .post-wrapper{
     padding: 10px;
@@ -469,15 +483,15 @@ input:focus {
         /*overflow: hidden;*/
     }
 
-    .logo input {
-        color: black;
-        /*width: 250px;*/
-        font-size: 14px;
-        padding: 15px;
-        display: block;
-        border-radius: 55px;
-        background-color: white;
-    }
+    /*.logo input {*/
+    /*    color: black;*/
+    /*    !*width: 250px;*!*/
+    /*    font-size: 14px;*/
+    /*    padding: 15px;*/
+    /*    display: block;*/
+    /*    border-radius: 55px;*/
+    /*    background-color: white;*/
+    /*}*/
 
     .log_img {
         display: none;
@@ -496,9 +510,9 @@ input:focus {
         display: none;
     }
 
-    .logo {
-        order: 9;
-    }
+    /*.logo {*/
+    /*    order: 9;*/
+    /*}*/
 
     .logo input {
         width: 40%;

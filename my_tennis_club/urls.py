@@ -21,7 +21,7 @@ from store import views
 from store import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.stores),
     path('fahmy/', views.tgarba),
     path('store/', include('store.urls')),
 
