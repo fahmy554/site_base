@@ -21,6 +21,7 @@ class Category(models.Model):
 
 class Store(models.Model):
     store_name = models.CharField(max_length=100)
+    html = models.CharField(max_length=100,null=True)
     text = models.CharField(max_length=100, null=True, blank=True)
     store_img_url = models.CharField(max_length=100, default='', null=True)
     slug = models.SlugField(null=True, blank=True, allow_unicode=True)

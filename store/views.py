@@ -140,6 +140,7 @@ def single_store(request,slug):
     data = {
         'posts': posts,
         'store': store,
+        'store_html': 'noon.html',
         'posts_count': len(posts),
         'stores': stores,
         'new_stores': stores,

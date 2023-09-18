@@ -12,8 +12,8 @@
     <div class="row flex-row-reverse ">
         <div class="col-4 single-store">
             <div class="">
-                <img decoding="async" src="https://cdn.almowafir.com/store_logos/noon_alm1_ar.png"
-                     alt="كود خصم نون: ALM1" title="كود خصم نون: ALM1">
+                <img decoding="async" src="https://cdn.almowafir.com/store_logos/noon_EAA9_ar.png"
+                     alt="كود خصم نون: EAA9" title="كود خصم نون: EAA9">
             </div>
         </div>
         <div class="col-8">
@@ -26,7 +26,7 @@
                     <div class="sp-h-num" style="font-size: 24px">{{ posts_count }} كوبونات</div>
 
                 </div>
-                <h6>آخر تحديث: {{ store.last_modified_date}}</h6>
+                <h6>آخر تحديث: {{ store.last_modified_date }}</h6>
             </section>
 
 
@@ -65,7 +65,7 @@
                 {% endfor %}
             </div>
 
-
         </section>
     </div>
+    {% include "store/single_store/"|add:store_html %} %}
 {% endblock %}
