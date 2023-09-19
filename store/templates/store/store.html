@@ -2,11 +2,11 @@
 {% load static %}
 
 
-{% block left_side %}
-    {% include 'store/left_blogs.html' %}
-
-
-{% endblock %}
+{#{% block left_side %}#}
+{#    {% include 'store/left_blogs.html' %}#}
+{##}
+{##}
+{#{% endblock %}#}
 
 {% block right_side %}
     <div class="row flex-row-reverse ">
@@ -67,5 +67,8 @@
 
         </section>
     </div>
-    {% include "store/single_store/"|add:store_html %} %}
+    {% if store_html %}
+    	    {% include "store/single_store/"|add:store_html %}
+
+    {% endif %}
 {% endblock %}

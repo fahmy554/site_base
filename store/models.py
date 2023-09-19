@@ -1,13 +1,23 @@
+import os
+import pathlib
 from datetime import datetime
+from glob import glob
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import slugify
 
+from my_tennis_club import settings
 
 # Create your models here.
 
-
+images_path = os.path.join(settings.BASE_DIR, 'media/stores_images/')
+images = glob(images_path + '/*.*')
+for image in images:
+    name=image.split('w200_')[-1].split('.')[0].split('-')[0]
+    p=os.path.join(settings.BASE_DIR, 'store/templates/store/single_store/')
+    p=os.path.join(p,f'{name}.html')
+    pathlib.Path(p).touch(exist_ok=True)
 class Category(models.Model):
     category_name = models.CharField(max_length=30)
 
@@ -35,6 +45,12 @@ class Store(models.Model):
     def save(self, *args, **kwargs):
         # if not self.slug:
         self.slug = slugify(self.store_name, allow_unicode=True)
+        if self.html:
+            img=[a for a in images if self.html in a]
+            if img:
+                self.store_logo.delete(save=False)
+                self.store_logo=img[0]
+
         super().save(*args, **kwargs)
 
     class Meta:
