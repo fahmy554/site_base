@@ -10,7 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
           rel="stylesheet"/>
 
-    <title>couponzsales</title>
+    {% block title %}
+            {% if page_title %}
+            	    	    <title>{{ page_title }}</title>
+            {% else %}
+                        	    	    <title>موقع كوبونات سيلز لجميع اكواد الخصم الحصرية</title>
+
+            {% endif %}
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{% static 'img/stores_images/w200_adidas-1.jpg' %}">
 
     <link rel="stylesheet" href="{% static 'css/test.css' %}">

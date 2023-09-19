@@ -40,6 +40,7 @@ def stores(request):
         'stores': stores,
         'new_stores': stores,
         'new_blogs': stores,
+        'page_title': DEFAULT_TITLE,
         'images_list': urlss,
         'images_path': urlss,
         'flags': [],
@@ -72,6 +73,7 @@ for image in images:
     images_list.append(image64)
 
 
+DEFAULT_TITLE='موقع كوبونات سيلز لجميع اكواد الخصم الحصرية'
 def tgarba(request):
     # print('images_path', images_path)
     # print('rooot', settings.MEDIA_ROOT)
@@ -144,6 +146,7 @@ def single_store(request,slug):
         'posts_count': len(posts),
         'stores': stores,
         'new_stores': stores,
+        'page_title': DEFAULT_TITLE,
         'new_blogs': stores,
         'images_list': urlss,
         'images_path': urlss,
