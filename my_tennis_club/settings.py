@@ -126,7 +126,7 @@ MEDIA_ROOT=BASE_DIR / 'media/'
 CDN=True
 
 if CDN:
-    STATIC_URL = "https://fahmy.b-cdn.net/"
+    STATIC_URL = "https://fahmy.b-cdn.net/static/"
 else:
 
     STATIC_URL = '/static/'
