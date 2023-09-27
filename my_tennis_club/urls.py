@@ -19,10 +19,19 @@ from django.contrib import admin
 from django.urls import path, include
 from store import views
 from store import views
+from store import sitemaps
+from django.contrib.sitemaps.views import sitemap
+
+sitemaps = {
+    'store':sitemaps.StoreSitemap
+}
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.stores),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
     path('fahmy/', views.tgarba),
+    path('deals/', views.deals, name='deals'),
     path('store/', include('store.urls')),
 
 ]

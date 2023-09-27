@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os.path
 from pathlib import Path
+from django.contrib.sitemaps import ping_google
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'members',
     'store',
+    'django.contrib.sites',
+    "django.contrib.sitemaps",
+    # add sites to installed apps
+
 ]
 
 MIDDLEWARE = [
@@ -123,7 +128,9 @@ USE_TZ = True
 
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR / 'media/'
-CDN=True
+CDN=False
+
+SITE_ID = 1   #define the site id
 
 if CDN:
     STATIC_URL = "https://fahmy.b-cdn.net/static/"

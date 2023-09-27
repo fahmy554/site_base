@@ -430,6 +430,8 @@ input{
 }
 .page_footer{
     border-bottom: 1px solid rgb(128, 128, 128);
+    direction: rtl;
+    flex-direction: row;
 }
 /*@media (min-width: 576px) {*/
 /*    .container, .container-sm {*/

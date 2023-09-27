@@ -16,6 +16,12 @@ from .models import Category, Post,Store
 from my_tennis_club import settings
 
 
+
+def deals(request):
+    data={}
+    return render(request, 'store/deals.html', context=data)
+
+
 def stores(request):
 
     posts = Post.objects.all()
