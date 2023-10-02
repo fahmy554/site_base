@@ -74,6 +74,8 @@ images_path = os.path.join(settings.STATIC_ROOT, 'img/stores_images')
 images = glob(images_path + '\*.*')
 images_list = []
 for image in images:
+    if 'html' in image:
+        continue
     image = Image.open(image)
     image64 = image_to_base64(image)
     images_list.append(image64)

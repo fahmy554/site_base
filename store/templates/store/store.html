@@ -12,8 +12,8 @@
     <div class="row flex-row-reverse ">
         <div class="col-4 single-store">
             <div class="" style="margin-bottom: 12px">
-                <img style="margin-bottom: 12px" decoding="async" src='{% static "img/stores_images/w200_noon.png" %}' alt="كود خصم نون: EAA9" title="كود خصم نون: EAA9">
-                <p class="text-center">كود الخصم EAA9</p>
+                <img height="100"  width="100" style="margin-bottom: 12px" decoding="async" src="{{ store.store_img_url }}" alt="{{ store.store_name }} {{ store.code }}" title="{{ store.store_name }} {{ store.code }}">
+                <p class="text-center" STYLE="font-size: 1.4rem;direction: rtl">كود الخصم {{ store.code }}</p>
             </div>
         </div>
         <div class="col-8">
@@ -35,7 +35,7 @@
 
     <div class="row">
         <section>
-            <div class="row posts flex-row-reverse align-items-md-stretch">
+            <div class="row posts">
                 {% for post in posts %}
 
                     <div class=" col-lg-6 col-md-6 col-xs-6 post-wrapper">

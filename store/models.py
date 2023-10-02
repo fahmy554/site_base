@@ -8,13 +8,19 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.text import slugify
 
 from my_tennis_club import settings
+from django.templatetags.static import static
 
 # Create your models here.
 
-images_path = os.path.join(settings.BASE_DIR, 'media/stores_images/')
+images_path = os.path.join(settings.BASE_DIR, 'media/stores_images')
 images = glob(images_path + '/*.*')
+
 for image in images:
-    name=image.split('w200_')[-1].split('.')[0].split('-')[0]
+    if 'w200' in image:
+        name=image.split('w200_')[-1].split('.')[0].split('-')[0]
+    else:
+        name=pathlib.Path(image).name.split('.')[0]
+
     p=os.path.join(settings.BASE_DIR, 'store/templates/store/single_store/')
     p=os.path.join(p,f'{name}.html')
     pathlib.Path(p).touch(exist_ok=True)
@@ -32,10 +38,11 @@ class Category(models.Model):
 class Store(models.Model):
     store_name = models.CharField(max_length=100)
     html = models.CharField(max_length=100,null=True)
-    text = models.CharField(max_length=100, null=True, blank=True)
-    store_img_url = models.CharField(max_length=100, default='', null=True)
+    text = models.CharField(max_length=100, null=True, blank=True,default='')
+    code = models.CharField(max_length=100, null=True, blank=True,default='')
+    store_img_url = models.CharField(max_length=100, default='', null=True,blank=True)
     slug = models.SlugField(null=True, blank=True, allow_unicode=True)
-    last_modified_date = models.DateField(auto_now=False,null=True,blank=True)
+    last_modified_date = models.DateField(auto_now=True,null=True,blank=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, blank=True, null=True)
     store_logo = models.ImageField(upload_to='stores_images/', verbose_name=_('Image'), null=True, blank=True)
 
@@ -43,6 +50,11 @@ class Store(models.Model):
         return self.store_name
 
     def save(self, *args, **kwargs):
+        self.code=self.code.upper()
+        images_path = os.path.join(settings.BASE_DIR, 'media/stores_images')
+        print('images_path', images_path)
+        images = glob(images_path + '/*.*')
+
         # if not self.slug:
         self.slug = slugify(self.store_name, allow_unicode=True)
         if self.html:
@@ -50,7 +62,15 @@ class Store(models.Model):
             if img:
                 self.store_logo.delete(save=False)
                 self.store_logo=img[0]
-
+        if not self.store_img_url:
+            for img in images:
+                print(self.html,img.lower())
+                if self.html in img.lower():
+                    img_name=pathlib.Path(img).name
+                    print('img name',img_name)
+                    # self.store_img_url=f'/static/img/store_imgs/{img_name}'
+                    self.store_img_url=static(f'/img/stores_images/{img_name}')
+                    break
         super().save(*args, **kwargs)
 
     class Meta:
